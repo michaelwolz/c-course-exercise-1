@@ -6,19 +6,11 @@
 ******************************************************************************/
 
 #include <stdio.h>
-
-int str_len(char s[])
-{
-        int i = 0;
-
-        while (s[i] != '\0')
-                i++;
-        return i;
-}
+#include <string.h>
 
 char *trim(char *s) {
 	char *end;
-	end = s + str_len(s) - 1;
+	end = s + strlen(s) - 1;
 
 	//Vordere Leerzeichen
     while (*s == ' ' || *s == '\t') s++;

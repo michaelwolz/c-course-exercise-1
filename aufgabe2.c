@@ -6,17 +6,9 @@
 ******************************************************************************/
 
 #include <stdio.h>
+#include <string.h>
 
 //**Defintion der Trim Funktion aus Aufgabe 1 (normalerweise wäre ein Include hier besser aber für die Aufgabenstellung belasse ich es jetzt bei dieser Lösung)**//
-int str_len(char s[])
-{
-        int i = 0;
-
-        while (s[i] != '\0')
-                i++;
-        return i;
-}
-
 
 char *trim(char *s) {
 	char *end;
@@ -34,6 +26,7 @@ char *trim(char *s) {
 	 
     return s;
 }
+
 //**Ende Trim**//
 
 int parseInt(char *s) {
