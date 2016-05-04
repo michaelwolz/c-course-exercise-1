@@ -96,7 +96,7 @@ char * utf8_to_entities(char *utf8) {
 
 int main() {
 	//Beispiel String mit allen Sonderformen und Bytegrößen für UTF-8 Zeichen
-	char s[] = "<b>Während Adam lacht, jagen zwölf Boxkämpfer 'Eva' \"quer\" über den großen Teich & ... 𐍈$€</b>";
+	char s[] = "<b>Während Adam lacht, jagen zwölf Boxkämpfer 'Eva' \"quer\" über den großen Teich & ... 𐍈€</b>";
 
 	printf("Input String: %s\n", s);
 	printf("Output String: %s\n", utf8_to_entities(s));

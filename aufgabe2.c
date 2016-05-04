@@ -9,13 +9,13 @@
 ******************************************************************************/
 
 #include <stdio.h>
-#include <string.h>
+#include <string.h> //für strlen
 
 //**Defintion der Trim Funktion aus Aufgabe 1 (normalerweise wäre ein Include hier besser aber für die Aufgabenstellung belasse ich es jetzt bei dieser Lösung)**//
 
 char *trim(char *s) {
 	char *end;
-	end = s + str_len(s) - 1;
+	end = s + strlen(s) - 1;
 
 	//Vordere Leerzeichen
     while (*s == ' ' || *s == '\t') s++;
@@ -34,24 +34,20 @@ char *trim(char *s) {
 
 int parseInt(char *s) {
 	char *trimmedString = trim(s); //Trim Leerzeichen
-    int sign;
-    int result;
-    
-    sign = 1;
+    int sign = 1; //Vorzeichen initialisiert mit 1 (für +)
+    int result = 0;
     
     if (*trimmedString == '-') {
-    	sign = -1;
-    	trimmedString++;
+    	sign = -1; //Vorzeichen auf -1 setzen (für -)
+    	trimmedString++; //Weiter zum nächsten Zeichen
     }
         
-    result = 0;
-    
-    while (*trimmedString != 0) {
-    	result = result * 10 + *trimmedString - '0';
-    	trimmedString++;
+    while (*trimmedString != 0) { //Solange Zeichen vorhanden sind.
+    	result = result * 10 + *trimmedString - '0'; //Zwischenergebnis um "10er" Stelle "verschieben" und nächstes Zeichen als "1er" Stelle hinzufügen
+    	trimmedString++; //Weiter zum nächsten Zeichen
     }
     
-    result = result * sign;
+    result = result * sign; //Vorzeichen hinzufügen
     return result;
 }
 
@@ -75,5 +71,3 @@ int main() {
      
     return 0;
 }
-
-

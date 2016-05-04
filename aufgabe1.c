@@ -9,19 +9,20 @@
 ******************************************************************************/
 
 #include <stdio.h>
-#include <string.h>
+#include <string.h> //für strlen
 
 char *trim(char *s) {
 	char *end;
 	end = s + strlen(s) - 1;
 
-	//Vordere Leerzeichen
+	//Vordere Leerzeichen abschneiden
     while (*s == ' ' || *s == '\t') s++;
 
+    //Sollte s nur aus Leerzeichen bestanden haben ist es jetzt leer und kann direkt zurückgegeben werden
 	if (*s == 0)
 		return s;
 
-	//Hintere Leerzeichen
+	//Hintere Leerzeichen abschneiden
 	while ((end > s) && (*end == ' ' || *end == '\t')) end--;
 	*(end+1) = 0;
 	 
@@ -29,6 +30,7 @@ char *trim(char *s) {
 }
 
 void test(char *s) {
+	//Testfunktion für Demonstrationszwecke
 	printf("\n#################################\n");
 	printf("String ohne Trim: \"%s\"\n", s);
 	printf("String mit Trim: \"%s\"", trim(s));
@@ -50,5 +52,3 @@ int main() {
     
     return 0;
 }
-
-
