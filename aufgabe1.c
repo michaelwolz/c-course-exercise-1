@@ -3,6 +3,9 @@
 ** Author: Michael Wolz
 ** Matrikelnummer: 1195270
 **
+** Author: Aaron Winziers
+** Matrikelnummer: 1176638
+**
 ******************************************************************************/
 
 #include <stdio.h>
